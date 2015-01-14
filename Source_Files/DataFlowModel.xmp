@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!DOCTYPE paradigm SYSTEM "edf.dtd">
+
+<paradigm name="DataFlowModel" guid="{746D6F03-1E46-4511-B633-FED9128690E1}" cdate="Tue Nov 18 21:10:13 2014" mdate="Tue Nov 18 21:10:13 2014" >
+
+	<comment></comment>
+
+	<author></author>
+
+	<folder name = "RootFolder" metaref = "1000"  rootobjects = "DataFlowDiagram" >
+		<attrdef name="add" metaref = "1045" valuetype = "integer" defvalue = "">
+		</attrdef>
+		<attrdef name="latency" metaref = "1046" valuetype = "integer" defvalue = "">
+		</attrdef>
+		<attrdef name="logical" metaref = "1049" valuetype = "integer" defvalue = "">
+		</attrdef>
+		<attrdef name="mul" metaref = "1048" valuetype = "integer" defvalue = "">
+		</attrdef>
+		<atom name = "add" metaref = "1001" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="adder.png"></regnode>
+		</atom>
+		<atom name = "comp" metaref = "1002" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="comparator.png"></regnode>
+		</atom>
+		<atom name = "greater" metaref = "1003" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="greaterthan.png"></regnode>
+		</atom>
+		<atom name = "leftshift" metaref = "1004" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="left_shift.png"></regnode>
+		</atom>
+		<atom name = "lesser" metaref = "1005" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="lessthan.png"></regnode>
+		</atom>
+		<atom name = "list_l" metaref = "1039"  attributes = "mul add logical">
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="list_l"></regnode>
+		</atom>
+		<atom name = "list_r" metaref = "1040"  attributes = "latency">
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="list_r"></regnode>
+		</atom>
+		<atom name = "mul" metaref = "1006" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="mul.png"></regnode>
+		</atom>
+		<atom name = "not" metaref = "1007" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="not.png"></regnode>
+		</atom>
+		<atom name = "rightshift" metaref = "1008" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="right_shift.png"></regnode>
+		</atom>
+		<atom name = "sink" metaref = "1009" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="sink.png"></regnode>
+		</atom>
+		<atom name = "source" metaref = "1010" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="source.png"></regnode>
+		</atom>
+		<atom name = "sub" metaref = "1011" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "icon" value ="sub.png"></regnode>
+		</atom>
+		<connection name = "Connection" metaref = "1012" >
+				<regnode name = "color" value ="0x000000"></regnode>
+				<regnode name = "dstStyle" value ="arrow"></regnode>
+				<regnode name = "srcStyle" value ="butt"></regnode>
+				<regnode name = "lineType" value ="solid"></regnode>
+			<connjoint>
+				<pointerspec name = "src">
+					<pointeritem desc = "add"></pointeritem>
+					<pointeritem desc = "comp"></pointeritem>
+					<pointeritem desc = "greater"></pointeritem>
+					<pointeritem desc = "leftshift"></pointeritem>
+					<pointeritem desc = "lesser"></pointeritem>
+					<pointeritem desc = "mul"></pointeritem>
+					<pointeritem desc = "not"></pointeritem>
+					<pointeritem desc = "rightshift"></pointeritem>
+					<pointeritem desc = "sub"></pointeritem>
+				</pointerspec>
+				<pointerspec name = "dst">
+					<pointeritem desc = "add"></pointeritem>
+					<pointeritem desc = "comp"></pointeritem>
+					<pointeritem desc = "greater"></pointeritem>
+					<pointeritem desc = "leftshift"></pointeritem>
+					<pointeritem desc = "lesser"></pointeritem>
+					<pointeritem desc = "mul"></pointeritem>
+					<pointeritem desc = "not"></pointeritem>
+					<pointeritem desc = "rightshift"></pointeritem>
+					<pointeritem desc = "sub"></pointeritem>
+				</pointerspec>
+			</connjoint>
+			<connjoint>
+				<pointerspec name = "src">
+					<pointeritem desc = "source"></pointeritem>
+				</pointerspec>
+				<pointerspec name = "dst">
+					<pointeritem desc = "add"></pointeritem>
+					<pointeritem desc = "comp"></pointeritem>
+					<pointeritem desc = "greater"></pointeritem>
+					<pointeritem desc = "leftshift"></pointeritem>
+					<pointeritem desc = "lesser"></pointeritem>
+					<pointeritem desc = "mul"></pointeritem>
+					<pointeritem desc = "not"></pointeritem>
+					<pointeritem desc = "rightshift"></pointeritem>
+					<pointeritem desc = "sub"></pointeritem>
+				</pointerspec>
+			</connjoint>
+			<connjoint>
+				<pointerspec name = "src">
+					<pointeritem desc = "add"></pointeritem>
+					<pointeritem desc = "comp"></pointeritem>
+					<pointeritem desc = "greater"></pointeritem>
+					<pointeritem desc = "leftshift"></pointeritem>
+					<pointeritem desc = "lesser"></pointeritem>
+					<pointeritem desc = "mul"></pointeritem>
+					<pointeritem desc = "not"></pointeritem>
+					<pointeritem desc = "rightshift"></pointeritem>
+					<pointeritem desc = "sub"></pointeritem>
+				</pointerspec>
+				<pointerspec name = "dst">
+					<pointeritem desc = "sink"></pointeritem>
+				</pointerspec>
+			</connjoint>
+		</connection>
+		<model name = "DataFlowDiagram" metaref = "1013" >
+				<regnode name = "namePosition" value ="4"></regnode>
+				<regnode name = "isTypeInfoShown" value ="true"></regnode>
+			<constraint name="ValidDataFlowDiagramPartCardinality7" eventmask = "0x0" depth = "1" priority = "1">
+				<![CDATA[let partCount = self.parts( "list_l" ) -> size in
+                     (partCount = 1)]]>
+				<dispname>Multiplicity of parts, which are contained by DataFlowDiagram, has to match 1.</dispname>
+			</constraint>
+			<constraint name="ValidDataFlowDiagramPartCardinality8" eventmask = "0x0" depth = "1" priority = "1">
+				<![CDATA[let partCount = self.parts( "list_r" ) -> size in
+                     (partCount = 1)]]>
+				<dispname>Multiplicity of parts, which are contained by DataFlowDiagram, has to match 1.</dispname>
+			</constraint>
+			<role name = "Connection" metaref = "1014" kind = "Connection"></role>
+			<role name = "add" metaref = "1015" kind = "add"></role>
+			<role name = "comp" metaref = "1016" kind = "comp"></role>
+			<role name = "greater" metaref = "1017" kind = "greater"></role>
+			<role name = "leftshift" metaref = "1018" kind = "leftshift"></role>
+			<role name = "lesser" metaref = "1019" kind = "lesser"></role>
+			<role name = "list_l" metaref = "1041" kind = "list_l"></role>
+			<role name = "list_r" metaref = "1042" kind = "list_r"></role>
+			<role name = "mul" metaref = "1020" kind = "mul"></role>
+			<role name = "not" metaref = "1021" kind = "not"></role>
+			<role name = "rightshift" metaref = "1022" kind = "rightshift"></role>
+			<role name = "sink" metaref = "1023" kind = "sink"></role>
+			<role name = "source" metaref = "1024" kind = "source"></role>
+			<role name = "sub" metaref = "1025" kind = "sub"></role>
+			<aspect name = "drawing" metaref = "1026" >
+				<part metaref = "1027" role = "Connection" primary = "yes" linked = "no"></part>
+				<part metaref = "1028" role = "add" primary = "yes" linked = "no"></part>
+				<part metaref = "1029" role = "comp" primary = "yes" linked = "no"></part>
+				<part metaref = "1030" role = "greater" primary = "yes" linked = "no"></part>
+				<part metaref = "1031" role = "leftshift" primary = "yes" linked = "no"></part>
+				<part metaref = "1032" role = "lesser" primary = "yes" linked = "no"></part>
+				<part metaref = "1043" role = "list_l" primary = "yes" linked = "no"></part>
+				<part metaref = "1044" role = "list_r" primary = "yes" linked = "no"></part>
+				<part metaref = "1033" role = "mul" primary = "yes" linked = "no"></part>
+				<part metaref = "1034" role = "not" primary = "yes" linked = "no"></part>
+				<part metaref = "1035" role = "rightshift" primary = "yes" linked = "no"></part>
+				<part metaref = "1036" role = "sink" primary = "yes" linked = "no"></part>
+				<part metaref = "1037" role = "source" primary = "yes" linked = "no"></part>
+				<part metaref = "1038" role = "sub" primary = "yes" linked = "no"></part>
+			</aspect>
+		</model>
+	</folder>
+</paradigm>
