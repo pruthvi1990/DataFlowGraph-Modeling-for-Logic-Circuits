@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{826E8384-5CD0-4076-95A4-78500462F6E8}</ProjectGuid>
+    <RootNamespace>BON2Component2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(GME_ROOT)/SDK/BON/Common;$(GME_ROOT)/Interfaces;$(GME_ROOT)/Gme/Interfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_USRDLL;BUILDER_OBJECT_NETWORK_V2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ModuleDefinitionFile>Component.def</ModuleDefinitionFile>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>$(ProjectDir)%(FileName).tlb</TypeLibraryName>
+      <AdditionalIncludeDirectories>$(ProjectDir).;$(GME_ROOT)\Interfaces;$(GME_ROOT)\GME\Interfaces;$(GME_ROOT)\bin;$(GME_ROOT)\GME\$(ConfigurationName);$(GME_ROOT)\GME\Release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(GME_ROOT)/SDK/BON/Common;$(GME_ROOT)/Interfaces;$(GME_ROOT)/Gme/Interfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;BUILDER_OBJECT_NETWORK_V2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ModuleDefinitionFile>Component.def</ModuleDefinitionFile>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>$(ProjectDir)%(FileName).tlb</TypeLibraryName>
+      <AdditionalIncludeDirectories>$(ProjectDir).;$(GME_ROOT)\Interfaces;$(GME_ROOT)\GME\Interfaces;$(GME_ROOT)\bin;$(GME_ROOT)\GME\$(ConfigurationName);$(GME_ROOT)\GME\Release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\BON.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\BONImpl.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\ComHelp.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Common.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\ComponentDll.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\ComponentObj.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Console.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Events.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Exceptions.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Extensions.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Formatter.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\MON.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\MONImpl.cpp" />
+    <ClCompile Include="$(GME_ROOT)\SDK\BON\Common\Utils.cpp" />
+    <ClCompile Include="BON2Component.cpp" />
+    <ClCompile Include="list_l.cpp" />
+    <ClCompile Include="ParseGraph.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\BON.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\BONImpl.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\ComHelp.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Common.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\ComponentDll.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\ComponentObj.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Console.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Events.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Exceptions.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Extensions.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Formatter.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\GMECOM.H" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\MON.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\MONImpl.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\targetver.h" />
+    <ClInclude Include="$(GME_ROOT)\SDK\BON\Common\Utils.h" />
+    <ClInclude Include="BON2Component.h" />
+    <ClInclude Include="ComponentConfig.h" />
+    <ClInclude Include="list_l.h" />
+    <ClInclude Include="ParseGraph.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="CompIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Component.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Component.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="$(GME_ROOT)\SDK\BON\Common\ComponentLib.idl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
